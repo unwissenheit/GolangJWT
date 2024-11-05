@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  auth-app:
+    tty: true
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: golang-jwt-auth
+    container_name: golang-jwt-auth
+    ports:
+      - 8000:8000
+    volumes:
+      - .:/app
+    env_file:
+      - .env
